@@ -27,6 +27,9 @@ function timer() {
 
     if (secondTen) {
       clearInterval(interval);
+      document
+        .querySelectorAll(".digit")
+        .forEach(item => (item.style.color = "red"));
     }
 
     document.getElementById("msHundreds").textContent = hundredSeconds;
