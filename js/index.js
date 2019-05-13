@@ -103,5 +103,11 @@ document.querySelectorAll('h4').forEach(item => item.style.color = 'green');
 document.querySelector('footer p').style.fontWeight = 'bold';
 
 document.querySelector('button').addEventListener('click', () => {
-  
-})
+    const message = document.createElement('p');
+    message.innerHTML = 'Thank you<br> for showing interest.'
+    message.style.fontSize = '12px';
+    message.style.color = 'red';
+    message.style.marginTop = '10px';
+    document.querySelector('.cta-text').appendChild(message);
+    document.querySelector('button').disabled = true;
+});
