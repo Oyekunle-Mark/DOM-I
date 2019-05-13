@@ -48,6 +48,7 @@ nav.forEach((a, i) => {
   a.style.color = 'green';
 });
 
+// add two more items to the nav
 const firstAnchor = document.createElement('a');
 const lastAnchor = document.createElement('a');
 firstAnchor.textContent = 'First';
@@ -62,12 +63,15 @@ document.querySelector('button').textContent = siteContent.cta["button"];
 document.querySelector('.cta-text h1').innerHTML = 'DOM<br> Is<br> Awesome';
 document.querySelector('#cta-img').src = siteContent.cta["img-src"];
 
-// main content features
-const features = document.querySelectorAll('.top-content .text-content h4');
-features.forEach(item => item.textContent = siteContent["main-content"]["features-h4"]);
+// features
+const features = document.querySelectorAll('.top-content .text-content')[0];
+features.children[0].textContent = siteContent["main-content"]["features-h4"];
+features.children[1].textContent = siteContent["main-content"]["features-content"];
 
-const featuresContent = document.querySelectorAll('.top-content .text-content p');
-featuresContent.forEach(item => item.textContent = siteContent["main-content"]["features-content"]);
+// about
+const about = document.querySelectorAll('.top-content .text-content')[1];
+about.children[0].textContent = siteContent["main-content"]["about-h4"];
+about.children[1].textContent = siteContent["main-content"]["about-content"]
 
 // main content middle image
 document.querySelector('.middle-img').setAttribute('src', siteContent["main-content"]["middle-img-src"]);
@@ -93,3 +97,11 @@ document.querySelectorAll('.contact p')[2].textContent = siteContent["contact"][
 
 // copyright
 document.querySelector('footer p').textContent = siteContent["footer"]["copyright"];
+
+// add more styles to the page
+document.querySelectorAll('h4').forEach(item => item.style.color = 'green');
+document.querySelector('footer p').style.fontWeight = 'bold';
+
+document.querySelector('button').addEventListener('click', () => {
+  
+})
